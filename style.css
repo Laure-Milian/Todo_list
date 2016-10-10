@@ -1,0 +1,18 @@
+div {
+	margin: 30px;
+}
+
+.container {
+	width: 70%;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+.checked{
+	color: grey;
+	text-decoration: line-through;
+	font-style: italic;
+}
