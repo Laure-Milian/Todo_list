@@ -2,7 +2,7 @@
 	console.log('coucou');
 	//alert('Bienvenue dans ma super liste !');
 
-	$('.container').append('<p>Pourquoi ?</p>');
+//	$('.container').append('<p>Pourquoi ?</p>');
 	
 	//Création tableau vide
 	var tabTasks = [];
@@ -31,8 +31,7 @@
 		var len = tabTasks.length;
 		for (var i = 0; i < len; i++) {
 			if (tabTasks[i].status) {
-				$('.tasks').append('<label data-index="' + i +'"><input type="checkbox" checked="checked" data-index="' + i + '">' + tabTasks[i].title + '</label>');
-				$('label[data-index="'+ i +'"]').addClass('checked');
+				statusTrue(i);
 			}
 		}
 	});
@@ -42,7 +41,7 @@
 		var len = tabTasks.length;
 		for (var i = 0; i < len; i++) {
 			if (!tabTasks[i].status) {
-				$('.tasks').append('<label data-index="' + i +'"><input type="checkbox" data-index="' + i + '">' + tabTasks[i].title + '</label>');
+				statusFalse(i);
 			}
 		}
 	});
@@ -52,11 +51,10 @@
 		var len = tabTasks.length;
 		for (var i = 0; i < len; i++) {
 			if (tabTasks[i].status) {
-				$('.tasks').append('<label data-index="' + i +'"><input type="checkbox" checked="checked" data-index="' + i + '">' + tabTasks[i].title + '</label>');
-				$('label[data-index="'+ i +'"]').addClass('checked');
+				statusTrue(i);
 			}
 			else {
-				$('.tasks').append('<label data-index="' + i +'"><input type="checkbox" data-index="' + i + '">' + tabTasks[i].title + '</label>');
+				statusFalse(i);
 			}
 		}
 	});
@@ -76,7 +74,14 @@ function isChecked(numInput){
 	}
 }
 
+function statusFalse(index){
+	$('.tasks').append('<label data-index="' + index +'"><input type="checkbox" data-index="' + index + '">' + tabTasks[index].title + '</label>');
+}
 
+function statusTrue(index){
+	$('.tasks').append('<label data-index="' + index +'"><input type="checkbox" checked="checked" data-index="' + index + '">' + tabTasks[index].title + '</label>');
+	$('label[data-index="'+ index +'"]').addClass('checked');
+}
 
 
 	/*$('.tasks').append('<label><input type="checkbox">Sortir le chien</label>');

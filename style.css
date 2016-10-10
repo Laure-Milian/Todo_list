@@ -1,15 +1,18 @@
+html > body {
+	background-color: #dddfe6;
+}
+
 div {
 	margin: 30px;
 }
 
-.container {
+.ui.centered.header {
+	color: #6a60a9;
+}
+/*.container {
 	width: 70%;
 	margin: 0 auto;
-}
-
-h1 {
-	text-align: center;
-}
+}*/
 
 .checked {
 	color: grey;

@@ -4,26 +4,31 @@
 	<meta charset="UTF-8">
 	<title>Todo List</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="semantic.min.css">
 </head>
 <body>
 
-	<div class="container">
-		<h1>Ma super liste</h1>
+	<div class="ui container centered grid">
+		<div class="seven wide column">
+			<div>
+				<h1 class="ui centered header">Ma super liste</h1>
+			</div>
 
-		<div>
-			<span>Ajouter une tâche :</span>
-			<input type="text" name="todo">
-			<button id="add">Ajouter</button>
-		</div>
+			<div>
+				<span>Ajouter une tâche :</span>
+				<input type="text" name="todo">
+				<button id="add" class="ui primary button">Ajouter</button>
+			</div>
 
-		<div>
-			<button id="allTasks">Toutes mes tâches</button>
-			<button id="tasksToDo">Tâches à faire</button>
-			<button id="tasksDone">Tâches terminées</button>
-		</div>
+			<div>
+				<button id="allTasks">Toutes mes tâches</button>
+				<button id="tasksToDo">Tâches à faire</button>
+				<button id="tasksDone">Tâches terminées</button>
+			</div>
 
-		<div class="tasks">
-			<label><input data-num="1" type="checkbox">Faire des courses</label>
+			<div class="tasks">
+				<label><input data-num="1" type="checkbox">Faire des courses</label>
+			</div>
 		</div>
 
 	</div>
