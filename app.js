@@ -37,7 +37,29 @@
 		}
 	});
 
+	$('#tasksToDo').on('click', function() {
+		$('.tasks').html('');
+		var len = tabTasks.length;
+		for (var i = 0; i < len; i++) {
+			if (!tabTasks[i].status) {
+				$('.tasks').append('<label data-index="' + i +'"><input type="checkbox" data-index="' + i + '">' + tabTasks[i].title + '</label>');
+			}
+		}
+	});
 
+	$('#allTasks').on('click', function() {
+		$('.tasks').html('');
+		var len = tabTasks.length;
+		for (var i = 0; i < len; i++) {
+			if (tabTasks[i].status) {
+				$('.tasks').append('<label data-index="' + i +'"><input type="checkbox" checked="checked" data-index="' + i + '">' + tabTasks[i].title + '</label>');
+				$('label[data-index="'+ i +'"]').addClass('checked');
+			}
+			else {
+				$('.tasks').append('<label data-index="' + i +'"><input type="checkbox" data-index="' + i + '">' + tabTasks[i].title + '</label>');
+			}
+		}
+	});
 
 
 
