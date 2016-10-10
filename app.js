@@ -3,7 +3,31 @@
 	//alert('Bienvenue dans ma super liste !');
 
 	$('.container').append('<p>Pourquoi ?</p>');
-	$('.tasks').append('<label><input type="checkbox">Sortir le chien</label>');
+	
+	//Création tableau vide
+	var tabTasks = [];
+
+	// Listener sur bouton add
+	$('#add').on('click', function() {
+		var indexTask = tabTasks.length;
+		tabTasks[indexTask] = {
+			title : $('input[name="todo"]').val(),
+			status : false
+		};
+		console.log(tabTasks);
+
+		$('.tasks').append('<label data-index="'+ indexTask +'"><input type="checkbox">'+ tabTasks[indexTask].title +'</label>');
+	});
+
+
+
+
+
+
+
+
+
+	/*$('.tasks').append('<label><input type="checkbox">Sortir le chien</label>');
 
 
 		//Au click sur Ajouter, on ajoute la tache à la liste
@@ -34,7 +58,7 @@
 				$('#task' + numeroTask).removeClass("checked");
 				console.log('unchecked donc je change la classe');
 			}
-		}
+		}*/
 
 
 
