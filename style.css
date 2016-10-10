@@ -11,7 +11,7 @@ h1 {
 	text-align: center;
 }
 
-.checked{
+.checked {
 	color: grey;
 	text-decoration: line-through;
 	font-style: italic;

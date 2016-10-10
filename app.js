@@ -16,13 +16,43 @@
 		};
 		console.log(tabTasks);
 
-		$('.tasks').append('<label data-index="'+ indexTask +'"><input type="checkbox">'+ tabTasks[indexTask].title +'</label>');
+		$('.tasks').append('<label data-index="'+ indexTask +'"><input type="checkbox" data-index="'+ indexTask + '">'+ tabTasks[indexTask].title +'</label>');
+	});
+
+	//Clic sur checkbox pour modifier class
+	$('.tasks').on('click', 'input[type="checkbox"]', function(){
+		var numInput = $(this).data('index');
+		isChecked(numInput);
+		
+	});
+
+	$('#tasksDone').on('click', function() {
+		$('.tasks').html('');
+		var len = tabTasks.length;
+		for (var i = 0; i < len; i++) {
+			if (tabTasks[i].status) {
+				$('.tasks').append('<label data-index="' + i +'"><input type="checkbox" checked="checked" data-index="' + i + '">' + tabTasks[i].title + '</label>');
+				$('label[data-index="'+ i +'"]').addClass('checked');
+			}
+		}
 	});
 
 
 
 
 
+
+function isChecked(numInput){
+	if (!tabTasks[numInput].status){
+			$('label[data-index="'+ numInput +'"]').addClass('checked');
+			tabTasks[numInput].status = true;
+			console.log('addClass');
+		} else{
+			$('label[data-index="'+ numInput +'"]').removeClass('checked');
+			tabTasks[numInput].status = false;
+			console.log('removeClass');
+	}
+}
 
 
 
