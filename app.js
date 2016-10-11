@@ -1,8 +1,5 @@
 (function() {
-	console.log('coucou');
-	//alert('Bienvenue dans ma super liste !');
-
-//	$('.container').append('<p>Pourquoi ?</p>');
+	'use strict';
 	
 	//Création tableau vide
 	var tabTasks = [];
@@ -16,7 +13,7 @@
 		};
 		console.log(tabTasks);
 
-		$('.tasks').append('<label data-index="'+ indexTask +'"><input type="checkbox" data-index="'+ indexTask + '">'+ tabTasks[indexTask].title +'</label>');
+		$('.tasks').append('<li><div class="ui checkbox"><input type="checkbox" data-index="'+ indexTask + '"><label data-index="'+ indexTask +'">'+ tabTasks[indexTask].title +'</label></div></li>');
 	});
 
 	//Clic sur checkbox pour modifier class
@@ -75,11 +72,11 @@ function isChecked(numInput){
 }
 
 function statusFalse(index){
-	$('.tasks').append('<label data-index="' + index +'"><input type="checkbox" data-index="' + index + '">' + tabTasks[index].title + '</label>');
+	$('.tasks').append('<li><div class="ui checkbox"><input type="checkbox" data-index="' + index + '"><label data-index="' + index +'">' + tabTasks[index].title + '</label></div></li>');
 }
 
 function statusTrue(index){
-	$('.tasks').append('<label data-index="' + index +'"><input type="checkbox" checked="checked" data-index="' + index + '">' + tabTasks[index].title + '</label>');
+	$('.tasks').append('<li><div class="ui checkbox"><input type="checkbox" checked="checked" data-index="' + index + '"><label data-index="' + index +'">' + tabTasks[index].title + '</label></div></li>');
 	$('label[data-index="'+ index +'"]').addClass('checked');
 }
 

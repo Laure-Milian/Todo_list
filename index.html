@@ -3,33 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Todo List</title>
-	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="semantic.min.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-	<div class="ui container centered grid">
-		<div class="seven wide column">
-			<div>
-				<h1 class="ui centered header">Ma super liste</h1>
+	<div class="ui centered grid">
+		<div class="ui ten wide centered column">
+			<div class="ui teal center aligned segment">
+				<div class="row">
+					<h1 class="ui centered header">Ma super liste</h1>
+				</div>
+				<div class="row">
+					<input id="fieldInput" type="text" name="todo">
+					<button id="add" class="ui teal button">Ajouter</button>				
+				</div>
+				<div class="row">
+					<button class="ui teal basic button" id="allTasks">Toutes mes tâches</button>
+					<button class="ui teal basic button" id="tasksToDo">Tâches à faire</button>
+					<button class="ui teal basic button" id="tasksDone">Tâches terminées</button>
+				</div>
 			</div>
-
-			<div>
-				<span>Ajouter une tâche :</span>
-				<input type="text" name="todo">
-				<button id="add" class="ui primary button">Ajouter</button>
-			</div>
-
-			<div>
-				<button id="allTasks">Toutes mes tâches</button>
-				<button id="tasksToDo">Tâches à faire</button>
-				<button id="tasksDone">Tâches terminées</button>
-			</div>
-
-			<div class="tasks">
-				<label><input data-num="1" type="checkbox">Faire des courses</label>
+			<div class="row">
+				<div id="tasks" class="eight wide centered column">
+					<ul class="tasks middle aligned">
+			
+					</ul>
+				</div>
 			</div>
 		</div>
+
 
 	</div>
 
