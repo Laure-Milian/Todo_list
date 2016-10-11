@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 	
-	//Création tableau vide
+	//Création tableau vide et gestion du localStorage
 	var tabTasks = [];
 	var data = JSON.parse(localStorage.getItem('data'));
 	if (data !== undefined && data !== null) {
@@ -15,7 +15,8 @@
 			var indexTask = tabTasks.length;
 			tabTasks[indexTask] = {
 				title : $('input[name="todo"]').val(),
-				status : false
+				status : false,
+				list : $('.item.active').text(),
 			};
 			$('#fieldInput').val('');
 			console.log(tabTasks);
@@ -40,7 +41,7 @@
 		
 	});
 
-
+	//Listeners sur les filtres
 	$('#tasksDone').on('click', function() {
 		$('.tasks').html('');
 		var len = tabTasks.length;
@@ -50,7 +51,6 @@
 			}
 		}
 	});
-
 	$('#tasksToDo').on('click', function() {
 		$('.tasks').html('');
 		var len = tabTasks.length;
@@ -60,16 +60,26 @@
 			}
 		}
 	});
-
 	$('#allTasks').on('click', function() {
 		allTasks();
 	});
 
 	// Ajouter une liste
 	$('#addList').on('click', function() {
-		console.log($('input[name="addList"]').val());
+		var listName = $('input[name="addList"]').val();
+		$('#menuList').append('<a class="item"> ' + listName +' <i class="trash outline icon"></i><i class="write icon"></i><i class="empty star icon"></i></a>');
 	});
 
+	//Au clic sur un item du menu, changer la classe active A REPRENDRE
+	$('.item').on('click', function(){
+		if(!this.getAttribute('active')) {
+			$(this).addClass('active');
+
+		}
+		else{
+
+		}
+	});
 
 
 
