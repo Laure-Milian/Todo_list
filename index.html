@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Todo List</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link rel="stylesheet" href="semantic.min.css">
+	<link rel="stylesheet" href="semantic/semantic.min.css">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 	<div class="ui centered grid">
+
 		<div class="ui ten wide centered column">
 			<div class="ui teal center aligned segment">
 				<!-- <div class="row">
@@ -27,15 +28,29 @@
 					<button class="ui teal basic button" id="tasksDone">Tâches terminées</button>
 				</div>
 			</div>
-			<div class="row">
-				<div id="tasks" class="eight wide centered column">
-					<ul class="tasks middle aligned">
-			
-					</ul>
+		</div>
+		<div class="row">
+			<div class="four wide column">
+				<div class="ui vertical fluid tabular menu">
+					<a class="item active"> Liste 1 <i class="write icon"></i><i class="empty star icon"></i></a>
+					<a class="item"> Liste 2 <i class="trash outline icon"></i><i class="write icon"></i><i class="empty star icon"></i></a>
+					<div class="ui center input">
+						<input type="text" name="addList"><button id="addList" class="small ui teal button">Créer liste</button>
+					</div>
+				</div>
+			</div>
+			<div class="ten wide stretched column">
+				<div class="row">
+					<div id="tasks" class="eight wide centered column">
+						<ul class="tasks middle aligned">			
+						</ul>
+					</div>
+				</div>
+				<div class="ui center aligned five wide column">
+					<button id="clear" class="ui red button">Vider la liste</button>
 				</div>
 			</div>
 		</div>
-
 
 	</div>
 

@@ -25,6 +25,13 @@
 		}
 	});
 
+	// Clic sur vider la liste
+	$('#clear').on('click', function(){
+		$('.tasks').html('');
+		localStorage.clear();
+		tabTasks = [];
+	});
+
 	//Clic sur checkbox pour modifier class
 	$('.tasks').on('click', 'input[type="checkbox"]', function(){
 		var numInput = $(this).data('index');
@@ -32,6 +39,7 @@
 		localStorage.setItem('data', JSON.stringify(tabTasks));
 		
 	});
+
 
 	$('#tasksDone').on('click', function() {
 		$('.tasks').html('');
@@ -55,6 +63,11 @@
 
 	$('#allTasks').on('click', function() {
 		allTasks();
+	});
+
+	// Ajouter une liste
+	$('#addList').on('click', function() {
+		console.log($('input[name="addList"]').val());
 	});
 
 
