@@ -16,6 +16,7 @@
 		console.log(tabLists);
 		allLists();
 	}
+	
 
 	// Listener sur bouton add
 	$('#add').on('click', function() {
@@ -29,7 +30,7 @@
 			$('#fieldInput').val('');
 			console.log(tabTasks);
 
-			$('.tasks').append('<li><div class="ui checkbox"><input type="checkbox" data-index="'+ indexTask + '"><label data-index="'+ indexTask +'">'+ tabTasks[indexTask].title +'</label></div></li>');
+			$('.tasks').append('<li><div class="ui checkbox"><input type="checkbox" data-index="'+ indexTask + '"><label data-index="'+ indexTask +'">'+ tabTasks[indexTask].title +'<i class="small trash outline icon"></i></label></div></li>');
 			localStorage.setItem('dataTasks', JSON.stringify(tabTasks));
 		}
 	});
@@ -109,6 +110,20 @@
 	});
 
 
+	//Au clic sur la poubelle, suppression de la tâche
+	$('#tasks').on('click', '.trash.icon', function(){
+		var len = tabTasks.length;
+		var taskName = $($(this).parent()).text();
+		for (var i = 0 ; i < len ; i++){
+			if(tabTasks[i].title === taskName) {
+				tabTasks[i] = false;
+				console.log(tabTasks[i]);
+			}
+		}
+		localStorage.setItem('dataTasks', JSON.stringify(tabTasks));
+		allTasks();
+	});
+
 
 	function isChecked(numInput){
 		if (!tabTasks[numInput].status){
@@ -123,11 +138,11 @@
 	}
 
 	function statusFalse(index){
-		$('.tasks').append('<li><div class="ui checkbox"><input type="checkbox" data-index="' + index + '"><label data-index="' + index +'">' + tabTasks[index].title + '</label></div></li>');
+		$('.tasks').append('<li><div class="ui checkbox"><input type="checkbox" data-index="' + index + '"><label data-index="' + index +'">' + tabTasks[index].title + '<i class="small trash outline icon"></i></label></div></li>');
 	}
 
 	function statusTrue(index){
-		$('.tasks').append('<li><div class="ui checkbox"><input type="checkbox" checked="checked" data-index="' + index + '"><label data-index="' + index +'">' + tabTasks[index].title + '</label></div></li>');
+		$('.tasks').append('<li><div class="ui checkbox"><input type="checkbox" checked="checked" data-index="' + index + '"><label data-index="' + index +'">' + tabTasks[index].title + '<i class="small trash outline icon"></i></label></div></li>');
 		$('label[data-index="'+ index +'"]').addClass('checked');
 	}
 
