@@ -33,11 +33,13 @@
 			<div class="four wide column">
 				<div class="ui vertical fluid tabular menu">
 					<div id="menuList">
-						<a id="List1" class="item active">Liste 1<i class="write icon"></i><i class="empty star icon"></i></a>
-						<a id="List2" class="item ">Liste 2<i class="trash outline icon"></i><i class="write icon"></i><i class="empty star icon"></i></a>
+						<a id="List1" class="item active">Courses<i class="write icon"></i><i class="empty star icon"></i></a>
+						<a id="List2" class="item ">Idées de voyage<i class="trash outline icon"></i><i class="write icon"></i><i class="empty star icon"></i></a>
 					</div>
-					<div class="ui center input">
-						<input type="text" name="addList"><button id="addList" class="small ui teal button">Créer liste</button>
+					<div>
+						<form onsubmit="return false" class="ui center input">
+							<input type="text" name="addList" id="fieldList"><button id="addList" class="small ui teal button">Créer liste</button>
+						</form>
 					</div>
 				</div>
 			</div>
