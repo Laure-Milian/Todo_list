@@ -35,15 +35,6 @@
 	});
 
 
-	// Clic sur vider la liste
-	$('#clear').on('click', function(){
-		$('.tasks').html('');
-		localStorage.removeItem('dataTasks');
-		tabTasks = [];
-		console.log(dataTasks);
-	});
-
-
 	//Clic sur checkbox pour modifier class
 	$('.tasks').on('click', 'input[type="checkbox"]', function(){
 		var numInput = $(this).data('index');
@@ -87,7 +78,7 @@
 			$('#fieldList').val('');
 			console.log(tabLists);
 
-			$('#menuList').append('<a class="item">' + listName +'<i class="trash outline icon"></i><i class="write icon"></i><i class="empty star icon"></i></a>');
+			$('#menuList').append('<a class="item">' + listName +'<i class="trash outline icon"></i><i class="empty star icon"></i></a>');
 			localStorage.setItem('dataLists', JSON.stringify(tabLists));
 		}
 	});
@@ -157,12 +148,12 @@
 		//Afficher toutes les listes à partir du local Storage
 	function allLists() {
 		$('#menuList').html('');
-		$('#menuList').append('<a class="item active">' + tabLists[0] +'<i class="write icon"></i><i class="empty star icon"></i></a>');
+		$('#menuList').append('<a class="item active">' + tabLists[0] +'<i class="empty star icon"></i></a>');
 
 		var len = tabLists.length;
 		for (var i = 1; i < len; i++) {
 			if (tabLists[i]) {
-				$('#menuList').append('<a class="item">' + tabLists[i] +'<i class="trash outline icon"></i><i class="write icon"></i><i class="empty star icon"></i></a>');
+				$('#menuList').append('<a class="item">' + tabLists[i] +'<i class="trash outline icon"></i><i class="empty star icon"></i></a>');
 			}
 		}
 	}
